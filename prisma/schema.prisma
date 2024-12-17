@@ -1,0 +1,32 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model memories {
+  id        Int     @id @default(autoincrement())
+  user_id   Int?
+  message   String?
+  image_url String?
+  users     users?  @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "user_memory")
+}
+
+model users {
+  id       Int        @id @default(autoincrement())
+  name     String?
+  email    String?    @unique
+  password String
+  memories memories[]
+  wishes   wishes[]
+}
+
+model wishes {
+  id      Int    @id(map: "cards_pkey") @default(autoincrement())
+  user_id Int?
+  users   users? @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "user_card")
+}
