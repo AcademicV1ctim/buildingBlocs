@@ -409,7 +409,6 @@ body {
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center; 
-    background-attachment: fixed; /*ensure gif stays in place while scrolling*/ 
   }
 
 p {
@@ -536,51 +535,51 @@ nav{
 }
 
 .image-container {
-    position: relative; /* Set the container to be the reference point for positioning */
-    width: 300px; /* Set width of the container (adjust as needed) */
-    height: 500px; /* Set height of the container (adjust as needed) */
-    margin: 0 auto; /* Center the container horizontally on the page */
+    position: relative; 
+    width: 300px; 
+    height: 500px; 
+    margin: 0 auto; 
     filter: drop-shadow(0 0 10px rgb(187, 164, 164));
 
   }
   
   #christmastree {
-    display: block; /* Ensures the tree image behaves like a block element */
-    width: 100%; /* Make the tree image fill the container width */
-    height: auto; /* Maintain aspect ratio */
+    display: block; 
+    width: 100%; 
+    height: auto; 
     transform: scale(2);
   }
   
   #star {
-    position: absolute; /* Position the star on top of the tree */
-    top: -160px; /* Adjust the distance between the top of the container and the star */
-    left: 50%; /* Center the star horizontally */
-    transform: translateX(-50%); /* Offset the star's width by 50% to truly center it */
-    width: 50px; /* Adjust the size of the star */
-    height: auto; /* Maintain aspect ratio */
+    position: absolute; 
+    top: -160px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 50px; 
+    height: auto; 
   }
   
   .ornament {
     position: absolute;
-    width: 20px; /* Size of the ornament */
-    height: 30px; /* Size of the ornament */
-    border-radius: 50%; /* Make it round */
-    cursor: pointer; /* Show pointer cursor on hover */
-    background-image: url('img/ornament.png'); /* Optional: Add your ornament image */
-    background-size: cover; /* Adjust the ornament image size */
-    background-position: center; /* Center the image */
+    width: 20px; 
+    height: 30px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    background-image: url('img/ornament.png'); 
+    background-size: cover;
+    background-position: center;
   }
 
   #present1 {
     justify-content: center;
     position: absolute;
-    width: 20px; /* Size of the ornament */
-    height: 30px; /* Size of the ornament */
-    border-radius: 50%; /* Make it round */
-    cursor: pointer; /* Show pointer cursor on hover */
-    background-image: url('img/present.png'); /* Optional: Add your ornament image */
-    background-size: cover; /* Adjust the ornament image size */
-    background-position: center; /* Center the image */
+    width: 20px; 
+    height: 30px; 
+    border-radius: 50%; 
+    cursor: pointer;
+    background-image: url('img/present.png');
+    background-size: cover;
+    background-position: center;
   }
   
   .popup {
@@ -607,9 +606,9 @@ nav{
   }
   
   .popup .button-container {
-    display: flex; /* Enables Flexbox */
-    justify-content: space-between; /* Distributes space evenly between buttons */
-    margin-top: 10px; /* Adds space above buttons */
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 10px;
 }
 
   .popup button {
@@ -638,11 +637,11 @@ nav{
     width: 500px;
     height: 300px;
     justify-content: space-between;
-    display: flex; /* Use Flexbox */
-    flex-direction: column; /* Arrange items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    text-align: center; /* Center align text */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
   }
 
   #wishtext {
@@ -673,23 +672,23 @@ nav{
   }
 
   .gallery-container {
-      display: flex; /* Enable Flexbox */
-      justify-content: center; /* Center all gallery items */
-      gap: 20px; /* Add space between gallery items */
-      padding: 20px; /* Optional: Add some padding around the container */
+      display: flex; 
+      justify-content: center; 
+      gap: 20px; 
+      padding: 20px; 
   }
   .gallery {
     padding: 10px;
-    text-align: center; /* Center align text */
+    text-align: center; 
     width: 500px;
   }
 
   .gallery img{
-    width: 300px; /* Fixed width */
-    height: 250px; /* Fixed height */
-    object-fit: cover; /* Ensures the image fits within the box while cropping if needed */
-    border-radius: 10px; /* Optional: Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+    width: 300px; 
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   .gdescription {
