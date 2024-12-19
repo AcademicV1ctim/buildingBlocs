@@ -1,14 +1,12 @@
 const express = require('express');
-const { getAllUsers, getUserByEId, getUserByEmail, login,createNewUser} = require('../models/user.model.js');
+// getAllUsers, getUserByEId, getUserByEmail
+const {login,createNewUser} = require('../models/user.model.js');
 require('dotenv').config();
-const nodemailer = require('nodemailer');
-const jwt = require('jsonwebtoken');
 
 const { password } = require('pg/lib/defaults.js');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-
 
 router.post('/login', async (req, res, next) => {
     try {
@@ -54,3 +52,5 @@ router.post('/registerNewUser', async (req, res, next) => {
         }
     }
 });
+
+module.exports = router;

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Greetings</title>
+    <link rel="stylesheet" href="./card.css">
+    
+</head>
+<body>
+    <div class="snow-container"></div>
+    <header>
+        Wish & Gifts
+    </header>
+
+    <nav>
+        <a href="#">Send a Card!</a>
+        <a href="#">Add a Wish!</a>
+    </nav>
+
+    <section>
+        
+        <h1><em>Ho Ho Ho</em>, it's the season to send some Christmas greetings!</h1>
+
+        <article>
+            <h2>Step 1</h2>
+            <p>Choose a template</p>
+        </article >
+        <article>
+            <h2>Step 2</h2>
+            <p>Enter your message</p>
+        </article>
+        <article>
+            <h2>Step 3</h2>
+            <p>Send to your recipient</p>
+        </article>
+    </section>
+
+
+    <section class="title">... Our templates ...</section>
+
+    <section class="templates">
+        <article>
+            <img src="./images/card1.svg" alt="Christmas Card 1">
+            <h2>Design 1</h2>
+            <button onclick="openModal('./images/card1.svg')">Click & Edit</button>
+        </article>
+        <article>
+            <img src="./images/card2.svg" alt="Christmas Card 2">
+            <h2>Design 2</h2>
+            <button onclick="openModal('./images/card2.svg')">Click & Edit</button>
+        </article>
+        <article>
+            <img src="./images/card3.svg" alt="Christmas Card 3">
+            <h2>Design 3</h2>
+            <button onclick="openModal('./images/card3.svg')">Click & Edit</button>
+        </article>
+        <article>
+            <img src="./images/card4.svg" alt="Christmas Card 4">
+            <h2>Design 4</h2>
+            <button onclick="openModal('./images/card4.svg')">Click & Edit</button>
+        </article>
+        <article>
+            <img src="./images/card5.svg" alt="Christmas Card 5">
+            <h2>Design 5</h2>
+            <button onclick="openModal('./images/card5.svg')">Click & Edit</button>
+        </article>
+        <article>
+            <img src="./images/card6.svg" alt="Christmas Card 6">
+            <h2>Design 6</h2>
+            <button onclick="openModal('./images/card6.svg')">Click & Edit</button>
+        </article>
+    </section>
+    
+
+    <!-- Popup Modal for editing message -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="cardImage" src="" alt="Card Image">
+            <textarea placeholder="Type your wish here..."></textarea>
+            <button onclick="saveWish()">Save Wish</button>
+        </div>
+    </div>
+
+<!-- Popup Modal for Sharing the Message -->
+<div id="shareModal" class="modal">
+    <div class="modal-content">     
+        <h3>Share Your Message</h3>
+        
+        <p>Copy the link below to share it with your recipient:</p>
+        <input type="text" id="shareLink" readonly value="https://randomlink" 
+               style="text-align: center; margin-bottom: 15px; width: 100%; padding: 5px;">
+
+        <p>Or share it via:</p>
+        <div class="social-icons">
+            <!-- Email Icon -->
+            <a href="#" onclick="shareViaEmail()" title="Share via Email">
+                <img src="./images/envelope.svg" alt="Email">
+            </a>
+            <!-- Telegram Icon -->
+            <a href="#" onclick="shareViaTelegram()" title="Share via Telegram">
+                <img src="./images/telegram.svg" alt="Telegram">
+            </a>
+            <!-- WhatsApp Icon -->
+            <a href="#" onclick="shareViaWhatsApp()" title="Share via WhatsApp">
+                <img src="./images/whatsapp.svg" alt="WhatsApp">
+            </a>
+            <!-- Instagram Icon -->
+            <a href="#" onclick="shareViaInstagram()" title="Share via Instagram">
+                <img src="./images/instagram.svg" alt="Instagram">
+            </a>
+        </div>
+        
+        <!-- Close Button -->
+        <button onclick="closeShareModal()" style="padding: 5px 10px;">Close</button>
+    </div>
+</div>
+
+    
+
+    <script src="../public/card.js"></script>
+
+
+</body>
+</html>

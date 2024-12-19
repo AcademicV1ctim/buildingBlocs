@@ -1,0 +1,49 @@
+/* Modal */
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Center text in the modal */
+.modal-content h3, .modal-content p {
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Center the link input box */
+#shareLink {
+    width: 80%;
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Social media icons container */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Style for social media icons */
+.social-icons a {
+    text-decoration: none;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* Hover effect for icons */
+.social-icons img:hover {
+    opacity: 0.8;
+}

@@ -60,4 +60,3 @@ module.exports.createNewUser = async function createNewUser(name,email,password)
         throw new Error("Error Registering New User");
     }
 };
-
