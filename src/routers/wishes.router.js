@@ -76,8 +76,6 @@ router.post('/createWish', async (req, res) => {
     }
   });
 
-
-
 // Delete a wish
 router.delete('/deleteWish/:wish_id', async (req, res) => {
   const { wish_id } = req.params;

@@ -2,7 +2,7 @@ const express = require('express');
 // getAllUsers, getUserByEId, getUserByEmail
 const {login,createNewUser} = require('../models/user.model.js');
 require('dotenv').config();
-
+const jwt = require('jsonwebtoken')
 const { password } = require('pg/lib/defaults.js');
 const router = express.Router();
 const bcrypt = require('bcrypt');
@@ -26,7 +26,22 @@ router.post('/login', async (req, res, next) => {
             throw new Error("Invalid username or password");
         }
 
-        res.status(200).json(loginUser);
+        // Generate JWT token
+        const token = jwt.sign(
+            { id: loginUser.id, name: loginUser.name },
+            process.env.JWT_SECRET_KEY,
+            { expiresIn: '1h' } // Token expiration time
+        );
+
+        res.status(200).json({
+            message: 'Login successful',
+            token: token,
+            user: {
+                id: loginUser.id,
+                name: loginUser.name,
+                email: loginUser.email
+            }
+        });
     } catch (error) {
         console.error("Login Route Error:", error);
         res.status(500).json({ error: Error });

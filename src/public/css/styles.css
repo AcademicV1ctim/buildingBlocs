@@ -175,7 +175,7 @@ text-decoration: none;
   height: 30px; 
   border-radius: 50%; 
   cursor: pointer; 
-  background-image: url('../images/ornament.png'); 
+  background-image: url('./images/ornament.png'); 
   background-size: cover;
   background-position: center;
 }
@@ -187,7 +187,7 @@ text-decoration: none;
   height: 30px; 
   border-radius: 50%; 
   cursor: pointer;
-  background-image: url('../images/present.png');
+  background-image: url('./images/present.png');
   background-size: cover;
   background-position: center;
 }

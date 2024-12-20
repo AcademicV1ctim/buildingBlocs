@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TreeOfSharing</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/snow.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/snow.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Agu+Display&display=swap" rel="stylesheet">
@@ -54,8 +54,8 @@
     </section>
 
     <section class="image-container">
-        <img id="christmastree" src="../images/christmastree.png" alt="Christmas Tree">
-        <img id="star" src="../images/unlitstar.png" alt="Star" onclick="showTaskPopup()">
+        <img id="christmastree" src="./images/christmastree.png" alt="Christmas Tree">
+        <img id="star" src="./images/unlitstar.png" alt="Star" onclick="showTaskPopup()">
 
         <!-- Task Popup -->
         <div id="task-popup" class="popup">
@@ -144,11 +144,11 @@
             const taskCompleted = localStorage.getItem("taskCompleted");
 
             if (taskCompleted === "true") {
-                star.src = "../images/litstar.png";
+                star.src = "./images/litstar.png";
             }
         });
     </script>
-    <script src="../javascript/snow.js"></script>
-    <script src="../javascript/auth.js"></script>
+    <script src="./javascript/snow.js"></script>
+    <script src="./javascript/auth.js"></script>
 </body>
 </html>
