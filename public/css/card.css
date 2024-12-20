@@ -121,7 +121,7 @@ button:hover {
   background-color: #fff;
   margin: 10% auto;
   padding: 20px;
-  border: 9px solid #000000;
+  border: 9px solid #ffffff;
   width: 300px;
   border-radius: 10px;
   text-align: center;
@@ -228,27 +228,4 @@ section.templates button:hover {
   height: 30px;
 }
 
-:root {
-  --snow-count: 20; 
-}
 
-.snow {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: white;
-  border-radius: 50%;
-  animation: fall linear infinite;
-}
-
-@keyframes fall {
-  0% {
-    transform: translate(var(--x-start), -10px) scale(var(--scale));
-  }
-  50% {
-    transform: translate(var(--x-mid), var(--y-mid)) scale(var(--scale));
-  }
-  100% {
-    transform: translate(var(--x-end), 100vh) scale(var(--scale));
-  }
-}

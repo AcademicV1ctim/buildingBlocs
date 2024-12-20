@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Your Card</title>
+    <link rel="stylesheet" href="../css/viewcard.css">
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <img id="cardImage" class="card-image" alt="Card">
+            <div class="message-container">
+                <p id="userMessage" class="user-message"></p>
+            </div>
+            <footer class="card-footer">
+                <p>- Love</p>
+            </footer>
+        </div>
+        <button onclick="goBack()" class="back-button">Want to Wish to Others? <span>Spread Joys</span></button>
+    </div>
+
+    <script>
+        // Extract query parameters
+        const params = new URLSearchParams(window.location.search);
+        const cardImage = params.get("card");
+        const userMessage = params.get("message");
+
+        // Populate the card and message
+        if (cardImage) {
+            document.getElementById("cardImage").src = decodeURIComponent(cardImage);
+        } else {
+            document.getElementById("cardImage").alt = "No card selected.";
+        }
+
+        if (userMessage) {
+            document.getElementById("userMessage").textContent = decodeURIComponent(userMessage);
+        } else {
+            document.getElementById("userMessage").textContent = "No message provided.";
+        }
+
+        // Go back to the main page
+        function goBack() {
+            window.location.href = "card.html";
+        }
+    </script>
+</body>
+</html>
