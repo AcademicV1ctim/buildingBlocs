@@ -3,6 +3,7 @@ const createError = require('http-errors');
 
 const userRouter = require('./routers/user.router');
 const memoriesRouter = require('./routers/memories.router');
+const wishesRouter = require('./routers/wishes.router');
 
 const path = require('path');
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/users', userRouter);
 app.use('/memories', memoriesRouter);
+app.use('/wishes', wishesRouter);
 
 app.use((req, res, next) => {
   next(createError(404, `Unknown resource ${req.method} ${req.originalUrl}`));

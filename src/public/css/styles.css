@@ -1,0 +1,380 @@
+.social-icons img {
+  width: 30px;
+  height: 30px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Agu Display", serif;
+}
+
+body {
+  font-family: "Agu Display", serif;
+  margin: 0; 
+  padding: 0; 
+  height: 100vh; 
+  background: radial-gradient(ellipse at center, #000000 0%, #000000 100%);
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-attachment: fixed;
+}
+
+p {
+color:white;
+}
+
+.header{
+  min-height: 20vh;
+  width: 100%;
+}
+
+nav{
+  display: flex;
+  padding: 0.2%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(241,89,76);
+  position: fixed;
+  width: 100vw;
+  z-index: 1000;
+}
+
+.nav-links{
+  flex: 1;
+  text-align: right;
+  padding: 2%;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+  font-size: 16px;
+}
+
+.nav-links ul li a{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav-links ul li a:hover{
+  background-color: #286B28;
+}
+
+.nav-links ul li a:hover::after{
+  background-color: #286B28;
+}
+
+#treeofsharingtitle {
+  font-size: 40px;
+  color: white;
+}
+
+#treeofsharingtitle a {
+text-decoration: none;
+}
+
+#treeofsharingtitle a:link {
+color: white;
+background-color: transparent;
+text-decoration: none;
+}
+
+#treeofsharingtitle a:visited {
+color: white;
+background-color: transparent;
+text-decoration: none;
+}
+
+#treeofsharingtitle a:hover {
+color: white;
+background-color: transparent;
+text-decoration: none;
+}
+
+#treeofsharingtitle a:active {
+color: white;
+background-color: transparent;
+text-decoration: none;
+}
+
+.heading{
+  color: #fff;
+  font-size: 40px;
+  font-weight: lighter;
+  text-align: center;
+  letter-spacing: 6px;
+  word-spacing: 6px;
+  margin-bottom: 25px;
+}
+
+.timer{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+.sub_timer{
+  width: 220px;
+  background: rgba(255, 255, 255, 0.19);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.digit{
+  color: #fff;
+  font-weight: lighter;
+  font-size: 70px;
+  text-align: center;
+  padding: 2.5rem 0;
+}
+.digit_name{
+  color: #000;
+  background: #fff;
+  text-align: center;
+  padding: 0.6rem 0;
+  font-size: 20px;
+}
+
+.wrapper{
+  padding: 8%;
+}
+
+.image-container {
+  position: relative; 
+  width: 300px; 
+  height: 500px; 
+  margin: 0 auto; 
+  filter: drop-shadow(0 0 10px rgb(187, 164, 164));
+
+}
+
+#christmastree {
+  display: block; 
+  width: 100%; 
+  height: auto; 
+  transform: scale(2);
+}
+
+#star {
+  position: absolute; 
+  top: -160px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 50px; 
+  height: auto; 
+}
+
+.ornament {
+  position: absolute;
+  width: 20px; 
+  height: 30px; 
+  border-radius: 50%; 
+  cursor: pointer; 
+  background-image: url('../images/ornament.png'); 
+  background-size: cover;
+  background-position: center;
+}
+
+#present1 {
+  justify-content: center;
+  position: absolute;
+  width: 20px; 
+  height: 30px; 
+  border-radius: 50%; 
+  cursor: pointer;
+  background-image: url('../images/present.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  max-width: 90%;
+  display: none;
+  border-radius: 10px;
+  z-index: 500;
+}
+
+.popup p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: black;
+  text-align: center;
+}
+
+.popup .button-container {
+  display: flex; 
+  justify-content: space-between; 
+  margin-top: 10px;
+}
+
+.popup button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.popup button:hover {
+  background-color: #45a049;
+}
+
+.wish {
+  margin-top: 10%;
+  background: rgb(241,89,76);
+  border-radius: 10px;
+  margin-bottom: 5%;
+  margin: 0 auto;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  width: 500px;
+  height: 300px;
+  justify-content: space-between;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+}
+
+#wishtext {
+  padding: 10px 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #45a049;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 0 auto;
+}
+
+.gallery-container {
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    padding: 20px; 
+}
+.gallery {
+  padding: 10px;
+  text-align: center; 
+  width: 500px;
+}
+
+.gallery img{
+  width: 300px; 
+  height: 250px; 
+  object-fit: cover; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gdescription {
+  color: white;
+  font-size: 25px;
+}
+
+/* Pop-up Container Styling */
+.pop-up-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; 
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+#popup input[type="text"],
+#popup input[type="password"],
+#popup input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#popup input[type="text"]:focus,
+#popup input[type="password"]:focus,
+#popup input[type="email"]:focus {
+    border-color: #000000;
+}
+
+#popup a {
+    color: white;
+}
+
+#popup a:hover {
+    color: gray;
+}
+
+#popup button[type="submit"] {
+    font-size: 20px;
+    color: aliceblue;
+    background: none;
+    box-shadow: none;
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 2px 20px;
+    margin: 0.5em;
+    cursor: pointer;
+}
+
+#popup button[type="submit"]:hover {
+    color: #000000;
+    transition: ease-in;
+    transition-duration: 0.15s;
+}
+
+.pop-up-content {
+    margin: 0 auto;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
