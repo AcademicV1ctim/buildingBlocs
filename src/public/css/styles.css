@@ -6,110 +6,49 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Agu Display", serif;
+  box-sizing: border-box;
 }
+
+
 
 body {
   font-family: "Agu Display", serif;
-  margin: 0; 
-  padding: 0; 
-  height: 100vh; 
+  text-align: center;
+  color: #333;
+  height: 100vh;
   background: radial-gradient(ellipse at center, #000000 0%, #000000 100%);
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-position: center;
-  background-attachment: fixed;
+  overflow: hidden;
+  filter: drop-shadow(0 0 10px rgb(187, 164, 164));
+  font-size: 16px
+    /* background-image: url(./images/snowfall.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
 }
 
-p {
-color:white;
+/* Header */
+header {
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 1rem;
+  font-size: 2rem;
+  position: sticky;
+  font-weight: bold;
 }
 
-.header{
-  min-height: 20vh;
-  width: 100%;
-}
-
-nav{
+nav {
   display: flex;
-  padding: 0.2%;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(241,89,76);
-  position: fixed;
-  width: 100vw;
-  z-index: 1000;
+  justify-content: flex-end;
+  background-color: #f95e4e;
+  padding: 0.5rem;
 }
 
-.nav-links{
-  flex: 1;
-  text-align: right;
-  padding: 2%;
-}
-
-.nav-links ul li {
-  list-style: none;
-  display: inline-block;
-  padding: 8px 12px;
-  position: relative;
-  font-size: 16px;
-}
-
-.nav-links ul li a{
+nav a {
   color: white;
   text-decoration: none;
-  font-size: 20px;
-}
-
-.nav-links ul li a:hover{
-  background-color: #286B28;
-}
-
-.nav-links ul li a:hover::after{
-  background-color: #286B28;
-}
-
-#treeofsharingtitle {
-  font-size: 40px;
-  color: white;
-}
-
-#treeofsharingtitle a {
-text-decoration: none;
-}
-
-#treeofsharingtitle a:link {
-color: white;
-background-color: transparent;
-text-decoration: none;
-}
-
-#treeofsharingtitle a:visited {
-color: white;
-background-color: transparent;
-text-decoration: none;
-}
-
-#treeofsharingtitle a:hover {
-color: white;
-background-color: transparent;
-text-decoration: none;
-}
-
-#treeofsharingtitle a:active {
-color: white;
-background-color: transparent;
-text-decoration: none;
-}
-
-.heading{
-  color: #fff;
-  font-size: 40px;
-  font-weight: lighter;
-  text-align: center;
-  letter-spacing: 6px;
-  word-spacing: 6px;
-  margin-bottom: 25px;
+  margin-left: 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .timer{
