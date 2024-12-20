@@ -80,6 +80,7 @@ async function login() {
         const data = await response.json();
         console.log(data);
         localStorage.setItem("userId", data.id);
+        localStorage.setItem("token", data.token);
 
         alert("Login successful!");
         window.location.href = "./index.html";

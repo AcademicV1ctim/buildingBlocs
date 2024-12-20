@@ -19,12 +19,7 @@ if (userMessage) {
 
 // Go back to the main page
 function goBack() {
-  window.location.href = "card.html";
-}
-
-// Go back to the main page
-function goBack() {
-  window.location.href = "card.html";
+  window.location.href = "./card.html";
 }
 
 // Share via Email
