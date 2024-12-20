@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TreeOfSharing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agu+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <div class="snow"></div>
+    <section class="header">
+        <nav>
+            <p id="treeofsharingtitle">
+                <a href="index.html">Tree Of Sharing</a>
+            </p>   
+            <div class="nav-links">
+                <ul>
+                    <li><a href="wall.html">Memories Wall</a></li>
+                    <li><a href="card.html">Send a Card</a></li>
+                    <li><a href="wishes.html">Add a Wish</a></li>
+                    <li><a href="logout.html">logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <section>
+        <div class="wrapper">
+            <h1 class="heading">WE ARE</h1>
+            <div class="timer">
+                <div class="sub_timer">
+                    <h1 id="day" class="digit">00</h1>
+                    <p class="digit_name">Days</p>
+                </div>
+                <div class="sub_timer">
+                    <h1 id="hour" class="digit">00</h1>
+                    <p class="digit_name">Hours</p>
+                </div>
+                <div class="sub_timer">
+                    <h1 id="min" class="digit">00</h1>
+                    <p class="digit_name">Minutes</p>
+                </div>
+                <div class="sub_timer">
+                    <h1 id="sec" class="digit">00</h1>
+                    <p class="digit_name">Seconds</p>
+                </div>
+            </div>
+            <h1 class="heading">AWAY FROM CHRISTMAS!</h1>
+        </div>
+    </section>
+
+    <section class="image-container">
+        <img id="christmastree" src="./images/christmastree.png" alt="Christmas Tree">
+        <img id="star" src="./images/unlitstar.png" alt="Star" onclick="showTaskPopup()">
+
+        <!-- Task Popup -->
+        <div id="task-popup" class="popup">
+            <p id="task-text">It's D-5 to Christmas! How about phoning/meeting someone whom you miss? Happy chatting!</p>
+
+        <div class="button-container">
+            <button onclick="acceptTask()">Yup, done!</button>
+            <button onclick="removeTask()">I'll pass!</button>
+        </div>
+        </div>
+
+        <!-- Ornaments -->
+        <div class="ornament" id="ornament1" style="top: 20%; left: 25%;" onclick="showMessage('Username says Merry Christmas!')"></div>
+        <div class="ornament" id="ornament2" style="top: 35%; left: 60%;" onclick="showMessage('Username2 says Happy Holidays!')"></div>
+        <div class="ornament" id="present1" style="top: 50%; left: 40%;" onclick="showMessageWithLink()"></div>
+
+        <!-- Popup message -->
+        <div id="message-popup" class="popup">
+            <p id="message-text"></p>
+            <button onclick="closeMessage()">Close</button>
+        </div>
+    </section>
+
+    <script>
+        var target_mili_sec = new Date("Dec 25, 2024 00:00:0").getTime();
+        function timer() {
+            var now_mili_sec = new Date().getTime();
+            var remaining_sec = Math.floor( (target_mili_sec - now_mili_sec) / 1000 );
+
+            var day = Math.floor(remaining_sec / (3600 * 24));
+            var hour = Math.floor((remaining_sec % (3600 * 24)) / 3600);
+            var min = Math.floor((remaining_sec % 3600) / 60);
+            var sec = Math.floor(remaining_sec % 60);
+
+            document.querySelector("#day").innerHTML = day;
+            document.querySelector("#hour").innerHTML = hour;
+            document.querySelector("#min").innerHTML = min;
+            document.querySelector("#sec").innerHTML = sec;
+        }
+
+        setInterval(timer, 1000); // 1 second duration
+
+        function showMessage(message) {
+            document.getElementById('message-text').innerText = message;
+            document.getElementById('message-popup').style.display = 'block';
+        }
+
+        function showMessageWithLink() {
+            // Show the message with a clickable link
+            const messageBox = document.getElementById("message-popup");
+            const messageText = document.getElementById("message-text");
+
+            const message = "Hello User! Want to spread more joy this season? Donate to <a href='https://donation.spd.org.sg/' target='_blank'>https://donation.spd.org.sg/</a> to help brighten their day!";
+                
+            messageText.innerHTML = message; // Inject HTML content for the clickable link
+            messageBox.style.display = "block";
+        }
+
+        function closeMessage() {
+            document.getElementById('message-popup').style.display = 'none';
+        }
+
+        function showTaskPopup() {
+            // Display the task popup when the star image is clicked
+            const taskPopup = document.getElementById("task-popup");
+            taskPopup.style.display = "block";
+        }
+
+        function acceptTask() {
+            // Handle task acceptance logic - redirect to another page
+            window.location.href = "./evidence.html"; 
+        }
+
+        function removeTask() {
+            // Handle task removal logic - just close the popup
+            closeTaskPopup();
+        }
+
+        function closeTaskPopup() {
+            // Hide the task popup
+            document.getElementById("task-popup").style.display = "none";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const star = document.getElementById("star");
+            const taskCompleted = localStorage.getItem("taskCompleted");
+
+            if (taskCompleted === "true") {
+                star.src = "./images/litstar.png";
+            }
+        });
+    </script>
+</body>
+</html>

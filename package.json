@@ -6,7 +6,7 @@
     "cloudinary": "^2.5.1",
     "dotenv": "^16.4.7",
     "dotenv-cli": "^7.4.2",
-    "express": "^4.19.2",
+    "express": "^4.21.2",
     "http-errors": "^2.0.0",
     "jsonwebtoken": "^9.0.2",
     "multer": "^1.4.5-lts.1",
@@ -29,8 +29,8 @@
     "postinstall": "npx prisma generate",
     "migration:dev": "dotenv -e .env -- npx prisma migrate dev",
     "migration:reset": "dotenv -e .env -- npx prisma migrate reset",
-    "start": "dotenv -e .env.development -- node ./src/server.js",
-    "test": "dotenv -e .env.test -- playwright test --config=configs/playwright.config.js",
+    "start": "dotenv -e .env -- node ./src/server.js",
+    "test": "dotenv -e .env -- playwright test --config=configs/playwright.config.js",
     "lint": "eslint -c configs/eslint.config.mjs ./src/*",
     "test-trace": "npm test -- --reporter=html --trace on"
   }

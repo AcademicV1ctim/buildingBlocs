@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/user', userRouter);
+app.use('/users', userRouter);
 app.use('/memories', memoriesRouter);
 
 app.use((req, res, next) => {
