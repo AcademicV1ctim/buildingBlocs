@@ -66,89 +66,20 @@
             <button onclick="removeTask()">I'll pass!</button>
         </div>
         </div>
-
         <!-- Ornaments -->
-        <div class="ornament" id="ornament1" style="top: 20%; left: 25%;" onclick="showMessage('Username says Merry Christmas!')"></div>
-        <div class="ornament" id="ornament2" style="top: 35%; left: 60%;" onclick="showMessage('Username2 says Happy Holidays!')"></div>
-        <div class="ornament" id="present1" style="top: 50%; left: 40%;" onclick="showMessageWithLink()"></div>
-
+        <div class="ornament" id="ornament1" style="top: 20%; left: 25%;"></div>
+        <div class="ornament" id="ornament2" style="top: 35%; left: 60%;"></div>
+        <div class="ornament" id="present1" style="top: 50%; left: 40%;"></div>
         <!-- Popup message -->
-        <div id="message-popup" class="popup">
+        <!-- Popup message -->
+        <div id="message-popup" class="popup" style="display: none;">
             <p id="message-text"></p>
             <button onclick="closeMessage()">Close</button>
         </div>
     </section>
 
-    <script>
-        var target_mili_sec = new Date("Dec 25, 2024 00:00:0").getTime();
-        function timer() {
-            var now_mili_sec = new Date().getTime();
-            var remaining_sec = Math.floor( (target_mili_sec - now_mili_sec) / 1000 );
-
-            var day = Math.floor(remaining_sec / (3600 * 24));
-            var hour = Math.floor((remaining_sec % (3600 * 24)) / 3600);
-            var min = Math.floor((remaining_sec % 3600) / 60);
-            var sec = Math.floor(remaining_sec % 60);
-
-            document.querySelector("#day").innerHTML = day;
-            document.querySelector("#hour").innerHTML = hour;
-            document.querySelector("#min").innerHTML = min;
-            document.querySelector("#sec").innerHTML = sec;
-        }
-
-        setInterval(timer, 1000); // 1 second duration
-
-        function showMessage(message) {
-            document.getElementById('message-text').innerText = message;
-            document.getElementById('message-popup').style.display = 'block';
-        }
-
-        function showMessageWithLink() {
-            // Show the message with a clickable link
-            const messageBox = document.getElementById("message-popup");
-            const messageText = document.getElementById("message-text");
-
-            const message = "Hello User! Want to spread more joy this season? Donate to <a href='https://donation.spd.org.sg/' target='_blank'>https://donation.spd.org.sg/</a> to help brighten their day!";
-                
-            messageText.innerHTML = message; // Inject HTML content for the clickable link
-            messageBox.style.display = "block";
-        }
-
-        function closeMessage() {
-            document.getElementById('message-popup').style.display = 'none';
-        }
-
-        function showTaskPopup() {
-            // Display the task popup when the star image is clicked
-            const taskPopup = document.getElementById("task-popup");
-            taskPopup.style.display = "block";
-        }
-
-        function acceptTask() {
-            // Handle task acceptance logic - redirect to another page
-            window.location.href = "./evidence.html"; 
-        }
-
-        function removeTask() {
-            // Handle task removal logic - just close the popup
-            closeTaskPopup();
-        }
-
-        function closeTaskPopup() {
-            // Hide the task popup
-            document.getElementById("task-popup").style.display = "none";
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const star = document.getElementById("star");
-            const taskCompleted = localStorage.getItem("taskCompleted");
-
-            if (taskCompleted === "true") {
-                star.src = "./images/litstar.png";
-            }
-        });
-    </script>
     <script src="./javascript/snow.js"></script>
     <script src="./javascript/auth.js"></script>
+    <script src="./javascript/index.js"></script>
 </body>
 </html>

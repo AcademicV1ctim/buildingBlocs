@@ -6,8 +6,7 @@ const router = express.Router();
 
 const {
   getWishesById,
-  getUsersMemories,
-  createNewMemory,
+  createNewWish,
   deleteWishes,
   getAllWishes,
   deleteWish,
@@ -22,8 +21,8 @@ cloudinary.config({
 // Get all wishes
 router.get('/getAllWishes', async (req, res) => {
   try {
-    const memories = await getAllWishes();
-    res.status(200).json(memories);
+    const wishes = await getAllWishes();
+    res.status(200).json(wishes);
   } catch (error) {
     console.error('Error fetching all wishes:', error.message);
     res.status(500).json({ error: 'Failed to fetch memories.' });
@@ -61,10 +60,10 @@ router.get('/getUsersWishes/:user_id', async (req, res) => {
 });
 // Create a new wish
 router.post('/createWish', async (req, res) => {
-    const { user_id, message } = req.body;
+    const {user_id, message} = req.body;
 
-    if (!user_id || !message) {
-      return res.status(400).json({ error: 'User ID and message are required.' });
+    if (!message) {
+      return res.status(400).json({ error: 'message is required.' });
     }
 
     try {
