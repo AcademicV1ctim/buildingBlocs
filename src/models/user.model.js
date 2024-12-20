@@ -1,7 +1,7 @@
 const prisma = require('./prismaClient');
 
 module.exports.getAllUsers = async function getAllUsers() {
-    return prisma.person.findMany();
+    return prisma.users.findMany();
 };
 
 module.exports.getUserById = async function getUserById(id) {
@@ -10,7 +10,7 @@ module.exports.getUserById = async function getUserById(id) {
         throw new Error("Invalid ID: not a number");
     }
 
-    return await prisma.person.findFirst({
+    return await prisma.users.findFirst({
         where: {
             id: intId, 
         },
@@ -18,7 +18,7 @@ module.exports.getUserById = async function getUserById(id) {
 };
 
 module.exports.getUserByEmail = async function getUserByEmail(email) {
-    return await prisma.person.findFirst({
+    return await prisma.users.findFirst({
         where: {
             email:email, 
         },
@@ -27,7 +27,7 @@ module.exports.getUserByEmail = async function getUserByEmail(email) {
 
 module.exports.login = async function login(name) {
     try {
-        const user = await prisma.person.findFirst({
+        const user = await prisma.users.findFirst({
             where: {
                 name: name,
             },
@@ -44,12 +44,12 @@ module.exports.login = async function login(name) {
 }
 
 module.exports.createNewUser = async function createNewUser(name,email,password) {
-    const user = await prisma.person.findFirst({
+    const user = await prisma.users.findFirst({
         where: { email: email },
     });
 
-    if (user == null) {
-        return await prisma.person.create({
+    if (!user) {
+        return await prisma.users.create({
             data: {
                 name: name,
                 email: email,

@@ -696,3 +696,76 @@ input[type="submit"] {
   color: white;
   font-size: 25px;
 }
+
+/* Pop-up Container Styling */
+.pop-up-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; 
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+#popup input[type="text"],
+#popup input[type="password"],
+#popup input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#popup input[type="text"]:focus,
+#popup input[type="password"]:focus,
+#popup input[type="email"]:focus {
+    border-color: #000000;
+}
+
+#popup a {
+    color: white;
+}
+
+#popup a:hover {
+    color: gray;
+}
+
+#popup button[type="submit"] {
+    font-size: 20px;
+    color: aliceblue;
+    background: none;
+    box-shadow: none;
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 2px 20px;
+    margin: 0.5em;
+    cursor: pointer;
+}
+
+#popup button[type="submit"]:hover {
+    color: #000000;
+    transition: ease-in;
+    transition-duration: 0.15s;
+}
+
+.pop-up-content {
+    margin: 0 auto;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
