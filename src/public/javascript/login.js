@@ -79,7 +79,8 @@ async function login() {
 
         const data = await response.json();
         console.log(data);
-        localStorage.setItem("userId", data.id);
+        const user_id = parseInt(data.id, 10);
+        localStorage.setItem("userId", user_id);
         localStorage.setItem("token", data.token);
 
         alert("Login successful!");

@@ -3,7 +3,7 @@ const prisma = require('./prismaClient');
 const { memoryUsage } = require('process');
 
 module.exports.getAllWishes = async function getAllUsers() {
-    return prisma.memories.findMany();
+    return prisma.wishes.findMany();
 };
 
 module.exports.getWishesById = async function getUserById(id) {
@@ -40,7 +40,7 @@ module.exports.createNewWish = async function createNewWish(user_id, message) {
             throw new Error('Failed to create a new wish.');
         }
 
-        return newMemory;
+        return newWish;
     } catch (error) {
         console.error('Error creating new wish:', error.message);
         throw new Error('An error occurred while creating the wish. Please try again.');
@@ -49,7 +49,7 @@ module.exports.createNewWish = async function createNewWish(user_id, message) {
 
 module.exports.deleteWish= async function deleteWish(wish_id) {
     try {
-        const deletedWish = await prisma.memories.delete({
+        const deletedWish = await prisma.wishes.delete({
             where: { id: wish_id }
         })
 
